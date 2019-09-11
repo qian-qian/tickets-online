@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试内容</title>
+    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <ul id="ul"></ul>
+    <script>
+        $(function () {
+            alert("111");
+        })
+        $.ajax({
+            url:"/getmovie",
+            data:{mid:2},
+            dataType:"json",
+            type:"get",
+            success:function (rt) {
+                for(var i=0;i<rt.list.length;i++){
+                    alert(rt.list[i].id);
+                    $("#ul").append("<li>"+rt.list[i].mname+"</li>")
+                }
+            }
+        });
+    </script>
+</body>
+</html>
