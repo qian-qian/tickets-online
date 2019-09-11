@@ -1,6 +1,5 @@
 package com.woniu.api;
 
-import com.woniu.entity.Movie;
 import com.woniu.service.MovieService;
 import com.woniu.util.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
