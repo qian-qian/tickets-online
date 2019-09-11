@@ -17,7 +17,13 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
+    <modules>
+        <module>eureka-server1</module>
+        <module>eureka-server2</module>
+        <module>gateway</module>
+        <module>movie-stage</module>
+        <module>web</module>
+    </modules>
     <dependencies>
         <!--<dependency>
             <groupId>org.springframework.boot</groupId>
