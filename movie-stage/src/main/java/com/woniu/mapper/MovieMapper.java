@@ -2,6 +2,9 @@ package com.woniu.mapper;
 
 import com.woniu.entity.Movie;
 
+import java.util.Date;
+import java.util.List;
+
 public interface MovieMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +17,8 @@ public interface MovieMapper {
     int updateByPrimaryKeySelective(Movie record);
 
     int updateByPrimaryKey(Movie record);
+
+    Movie selectMovieByMid(Integer mid);
+    List<Movie> selectMoviesByCid(Integer cid);
+//    List<Movie> selectMoviesBytid(Integer tid, String comntry, Date uptime, Integer pageIndex, Integer num)
 }

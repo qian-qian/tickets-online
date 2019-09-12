@@ -1,6 +1,8 @@
 package com.woniu.entity;
 
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -49,4 +51,24 @@ public class Movie {
     * 电影时长
     */
     private String longtime;
+
+    /**
+    * 电影的封面图
+    */
+    private String mpic;
+
+    /**
+     * 电影类型
+     */
+    private List<Type> types;
+
+    /**
+     * 电影图片链接
+     */
+    private List<Photo> photos;
+
+    /**
+     * 电影排片信息
+     */
+    private List<MovieShowtime> movieShowtimes;
 }

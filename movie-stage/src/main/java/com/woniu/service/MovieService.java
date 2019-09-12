@@ -17,15 +17,22 @@ public interface MovieService {
     /**
      * 根据影院id查电影集合
      * @param cid
+     * @return
+     * @throws Exception
+     */
+    List<Movie> selectMoviesByCid(Integer cid) throws Exception;
+
+
+    /**
+     * 根据影片类型，产地，上映时间查询电影
+     * @param tid
+     * @param comntry
+     * @param uptime
      * @param pageIndex
      * @param num
      * @return
      * @throws Exception
      */
-    List<Movie> selectMoviesByCid(Integer cid,Integer pageIndex,Integer num) throws Exception;
-
-
     List<Movie> selectMoviesBytid(Integer tid, String comntry, Date uptime, Integer pageIndex, Integer num) throws Exception;
-
 
 }
