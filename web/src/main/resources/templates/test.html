@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>测试内容</title>
-    <script type="text/javascript" src="/web/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 </head>
 <body>
     <ul id="ul"></ul>
     <script>
         $.ajax({
-            url:"/web/getcinema",
+            url:"/cinema-stage/cinema",
             dataType:"json",
             type:"get",
             success:function (rt) {
                 for(var i=0;i<rt.list.length;i++){
-                    $("#ul").append("<li>"+rt.list[i].id+"</li><li>"+rt.list[i].cname+
-                        "</li><li>"+rt.list[i].caddress+"</li><li>"+rt.list[i].copyRight+
-                        "</li><li><img src='"+rt.list[i].logo+"'></li>")
+                    $("#ul").append()
                 }
             }
         });
