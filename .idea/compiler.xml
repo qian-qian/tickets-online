@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cinema-stage" />
         <module name="comment" />
         <module name="eureka-server1" />
         <module name="eureka-server2" />
@@ -16,6 +17,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cinema-stage" target="1.8" />
       <module name="comment" target="1.8" />
       <module name="eureka-server1" target="1.8" />
       <module name="eureka-server2" target="1.8" />
