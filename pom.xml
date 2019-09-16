@@ -21,7 +21,6 @@
         <module>eureka-server1</module>
         <module>eureka-server2</module>
         <module>gateway</module>
-        <module>movie-stage</module>
         <module>web</module>
         <module>cinema-stage</module>
     </modules>
