@@ -685,4 +685,5 @@ public class UserExample {
             this(condition, value, secondValue, null);
         }
     }
+
 }
