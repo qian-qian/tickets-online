@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="comment" />
+        <module name="eureka-server1" />
+        <module name="eureka-server2" />
+        <module name="gateway" />
+        <module name="movie-stage" />
+        <module name="tickets-online" />
+        <module name="user" />
+        <module name="web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="comment" target="1.8" />
+      <module name="eureka-server1" target="1.8" />
+      <module name="eureka-server2" target="1.8" />
+      <module name="gateway" target="1.8" />
+      <module name="movie-stage" target="1.8" />
+      <module name="tickets-online" target="1.8" />
+      <module name="user" target="1.8" />
+      <module name="web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

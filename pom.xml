@@ -23,7 +23,7 @@
         <module>gateway</module>
         <module>movie-stage</module>
         <module>web</module>
-        <module>cinema-stage</module>
+        <!--<module>cinema-stage</module>-->
     </modules>
     <dependencies>
         <!--<dependency>
