@@ -10,7 +10,6 @@
         <module name="eureka-server1" />
         <module name="eureka-server2" />
         <module name="gateway" />
-        <module name="movie-stage" />
         <module name="tickets-online" />
         <module name="user" />
         <module name="web" />
