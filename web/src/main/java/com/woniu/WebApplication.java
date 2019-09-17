@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WebApplication {
 
     public static void main(String[] args) {
+        System.out.println("holleo word");
         SpringApplication.run(WebApplication.class, args);
     }
 
