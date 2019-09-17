@@ -39,6 +39,7 @@
 <link rel="stylesheet" type="text/css" href="/web/ltcss/order-detail.3a8a0a18.css"/>
 <link rel="stylesheet" type="text/css" href="/web/list-css/basictable.css" />
 <script type="text/javascript" src="/web/list-js/jquery.basictable.min.js"></script>
+    <script type="text/javascript" src="/web/js/vue.js"></script>
 <style type="text/css">
 		#p-info{
 			position:absolute;
@@ -61,7 +62,7 @@
 				<div class="container container-head">
 			<div class="w3layouts_logo ">
 				<a href="/web/index.html">
-					<h1 class="title">爱乐<span class="webtitle-bottom">电影</span></h1></a>
+					<h1 class="title">爱乐<span id="webtitle-bottom">电影</span></h1></a>
 			</div>
 			<div class="w3l_search_city col-lg-3 col-xs-12 col-sm-6">
 				<form action="#" method="post">
@@ -198,10 +199,10 @@
     
     <div class="container" id="app">
 
-  <div class="order-container" data-page-type="detail" data-order-id="21309230601" data-unique-status="0">
+  <div class="order-container" data-page-type="detail" :data-order-id="msg.object.orderId" data-unique-status="0">
 
     <div class="status-box unpaid">
-      <p class="title">待支付</p>
+      <p class="title" v-text="msg.object.ostateMsg">待支付</p>
 
         <p class="desc" data-left-pay-second="358">
           请在<span class="minute">4</span>分钟<span class="second">41</span>秒内完成支付
@@ -210,8 +211,8 @@
 
 
     <div class="order-note">
-      <span class="order-id">猫眼订单号:21309230601</span>
-      <span class="contact">（有订单问题可拨打猫眼客服电话<i>1010-5335</i>，工作时间: 9:00-24:00）</span>
+      <span class="order-id" v-text="'爱乐订单号:'+msg.object.orderId"></span>
+      <span class="contact">（有订单问题可拨打爱乐客服电话<i>1010-5335</i>，工作时间: 9:00-24:00）</span>
     </div>
 
       <table class="order-table">
@@ -225,14 +226,14 @@
     </thead>
     <tbody>
       <tr>
-        <td class="movie-name">《罗小黑战记》</td>
-        <td class="showtime">今天 9月9日 17:05</td>
-        <td class="cinema-name">万达影城（北碚万达广场店）</td>
+        <td class="movie-name" v-text="msg.object.movieName"></td>
+        <td class="showtime" v-text="msg.object.formatTime"></td>
+        <td class="cinema-name" v-text="msg.object.cinemaName"></td>
         <td>
-          <span class="hall">2号厅</span>
+          <span class="hall" v-text="msg.object.roomName"></span>
           <div class="seats">
-            <div>
-                <span class=""><i>4</i>排<i>3</i>座</span>
+            <div v-for="seatname in msg.object.seatList">
+                <span class="" v-text="seatname.seatName"></span>
             </div>
             <div>
             </div>
@@ -246,9 +247,9 @@
     <div class="order-bottom">
       <div class="clearfix">
         <div class="cinema-info">
-          <p class="name">万达影城（北碚万达广场店）</p>
-          <p class="address">地址: 歇马镇冯时行路300号万达广场4F万达影城</p>
-          <p class="phone">电话: 023-60309322</p>
+          <p class="name" v-text="msg.object.cinemaName"></p>
+          <p class="address"v-text="'地址： '+msg.object.cinemaAddress"></p>
+          <p class="phone" v-text="'电话： '+msg.object.phone"></p>
         </div>
 
         <div class="price-box">
@@ -293,13 +294,34 @@
   </div>
 
     </div>
+	<script type="text/javascript">
+  var href = window.location.href;
+  var id= href.split("=")[0];
+    function select(obj) {
+		$.ajax({
+			url: "/orders/profile/orders/detail",
+			data: {"oid": "1"},
+			type: "get",
+			dataType: "json",
+			success: function (data) {
+				obj.msg = data;
+			}
+		})
+	}
+	/*var pay= setInterval('alert("Hello");', 3000);*/
+
+        var app = new Vue({
+            el: "#app",
+            data: {msg: ""},
+            created: function () {
+                var obj = this
+                select(obj);
+            }
+        })
+</script>
 
 	
 			
-
-
-	
-
 
 	<div class="footer">
 		<div class="container">
@@ -334,7 +356,7 @@
 					</div>
 				</div>
 				<div class="col-md-6 w3ls_footer_grid_right">
-					<a href="index.html"><h2 class="title">爱乐<span class="webtitle-bottom">电影</span></h2></a>
+					<a href="index.html"><h2 class="title">爱乐<span id="webtitle-bottom">电影</span></h2></a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

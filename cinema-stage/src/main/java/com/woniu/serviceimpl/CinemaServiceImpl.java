@@ -40,7 +40,19 @@ public class CinemaServiceImpl implements CinemaService {
 
     @Override
     public Integer insert(Cinema cinema) {
-        cinemaMapper.insert(cinema)
+        cinemaMapper.insert(cinema);
         return null;
+    }
+
+    @Override
+    public Integer delete(Integer cid) {
+        int row = cinemaMapper.deleteByPrimaryKey(cid);
+        return row;
+    }
+
+    @Override
+    public Integer update(Cinema cinema) {
+        int row = cinemaMapper.updateByPrimaryKeySelective(cinema);
+        return row;
     }
 }

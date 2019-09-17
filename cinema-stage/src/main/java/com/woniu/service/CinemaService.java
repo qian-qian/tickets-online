@@ -13,6 +13,10 @@ public interface CinemaService {
     public Integer count();
     //新增一家电影院
     public Integer insert(Cinema cinema);
+    //根据id删除一家影院
+    public Integer delete(Integer cid);
+    //根据id更新一家影院
+    public Integer update(Cinema cinema);
 
 
 }
