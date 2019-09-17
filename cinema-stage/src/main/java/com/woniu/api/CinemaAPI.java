@@ -31,6 +31,7 @@ public class CinemaAPI {
         System.out.println(cinema);
         return new Result("success",null,cinema,null);
     }
+    //未完成
     @PostMapping
     public Result insertCinema(){
         Cinema cinema = new Cinema();
@@ -39,7 +40,14 @@ public class CinemaAPI {
     }
     @DeleteMapping
     public Result deleteCinema(Integer cid){
-
+        Integer row = cinemaService.delete(cid);
+        return new Result("success",null,null,null);
+    }
+    //未完成
+    @PutMapping
+    public Result updateCinema(){
+        Cinema cinema = new Cinema();
+        Integer row = cinemaService.update(cinema);
         return new Result("success",null,null,null);
     }
 
