@@ -1,6 +1,7 @@
 package com.woniu.entity;
-
+import com.woniu.entity.Type;
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private Integer id;
@@ -16,6 +17,20 @@ public class User {
     private Byte state;
 
     private String upic;
+
+    private String sex;
+
+    private String sign;
+
+    private List<Type> types;
+
+    public List<Type> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<Type> types) {
+        this.types = types;
+    }
 
     public Integer getId() {
         return id;
@@ -71,5 +86,37 @@ public class User {
 
     public void setUpic(String upic) {
         this.upic = upic == null ? null : upic.trim();
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
+    }
+
+    public String getSign() {
+        return sign;
+    }
+
+    public void setSign(String sign) {
+        this.sign = sign == null ? null : sign.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", birth=" + birth +
+                ", state=" + state +
+                ", upic='" + upic + '\'' +
+                ", sex='" + sex + '\'' +
+                ", sign='" + sign + '\'' +
+                ", types=" + types +
+                '}';
     }
 }

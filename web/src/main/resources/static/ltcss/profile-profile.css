@@ -510,7 +510,7 @@
  margin-left:200px;
  padding-left:40px;
  width:900px;
- min-height:900px
+ /*height:100%;*/
 }
 .info-content .orders-container .profile-title,
 .info-content .profile-container .profile-title {
@@ -770,8 +770,9 @@
 .avatar-container {
  text-align:center;
  float:left;
- color:#333;
- background:#fff;
+ /*color:#333;*/
+ /*background:#fff;*/
+ margin-top: 30px;
  width:270px
 }
 .avatar-container .avatar-content img {
@@ -786,8 +787,8 @@
  cursor:pointer;
  margin:20px auto 0;
  width:182px;
- height:56px;
- line-height:56px;
+ height:40px;
+ line-height:40px;
  color:#5b5b5b;
  background-color:#e6e6e6;
  border-radius:10px;
@@ -795,19 +796,29 @@
  font-size:18px;
  padding:0
 }
+.avatar-container .upload-avatar-image .upload-btn:hover{
+ background-color: #5bc0de;
+}
 .avatar-container .upload-avatar-image #fileUpload {
- position:absolute;
+/* position:absolute;
  top:0;
  right:0;
  opacity:0;
+ width: 10%;
+ height: 10%;
  bottom:-50px;
  direction:ltr;
  font-size:200px!important;
- cursor:pointer
+ cursor:pointer*/
+ margin-top:-17%;
+ margin-left: -10%;
+ width: 80%;
+ opacity:0;
+ cursor:pointer;
 }
 .avatar-container .tips {
  margin-top:10px;
- color:#999;
+ color:#999999;
  font-size:18px;
  line-height:30px
 }
@@ -928,7 +939,7 @@
 		font-weight: 800;
 		font-style: italic;
 	}
-	#webtitle-bottom{
+	.webtitle-bottom{
 		 font-size: 17px;
 	}
 	.form-legend{

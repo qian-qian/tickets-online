@@ -36,6 +36,8 @@ public class GateFilter extends ZuulFilter {
         HttpServletRequest request = context.getRequest();
         //获取session
         HttpSession session = request.getSession();
+        Integer user=1;
+        session.setAttribute("user",user);
         //登录验证信息可以存入session中
         //可以通过下述代码响应错误信息
         //requestContext.setSendZuulResponse(false);
